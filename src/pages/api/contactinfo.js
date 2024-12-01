@@ -7,9 +7,9 @@ export default async function handler(req, res) {
     if (req.method === "GET") {
       const [rows] = await connection.execute("SELECT * FROM contact_us");
       if (rows.length > 0) {
-        res.status(200).json({ data: rows[0] });
+        res.status(200).json({ data: rows });
       } else {
-        res.status(404).json({ message: "team not found" });
+        res.status(404).json({ message: "contact information not found" });
       }
     }
   } catch (error) {

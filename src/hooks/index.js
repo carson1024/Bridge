@@ -79,8 +79,8 @@ export function useAboutUs() {
   };
 }
 
-export function useContactUs() {
-  const { data, error } = useSWR(`/api/contactus`, fetcher);
+export function useContactInfo() {
+  const { data, error } = useSWR(`/api/contactinfo`, fetcher);
 
   return {
     contact: data?.data,

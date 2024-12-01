@@ -3,7 +3,7 @@ import DefaultFooter from "@/src/components/footer/DefaultFooter";
 import Partners from "@/src/components/services/Partners";
 import Team3 from "@/src/components/team/Team3";
 import Link from "next/link";
-import VideoBlock from "@/src/components/about/VideoBlock";
+import TextVideoBlock from "@/src/components/about/TextVideoBlock";
 export const metadata = {
   title: "About Us",
 };
@@ -32,60 +32,12 @@ const AboutUsV1 = () => {
       --> */}
       <DefaulHeader />
 
-      {/* 
-			=============================================
-				Feature Section Fifty One
-			============================================== 
-			*/}
-      <div className="fancy-feature-fiftyOne position-relative mt-200">
-        <div className="container">
-          <div className="row">
-            <div className="col-lg-7" data-aos="fade-right">
-              <div className="title-style-five mb-65 md-mb-40">
-                <div className="sc-title-two fst-italic position-relative">
-                  More About us.
-                </div>
-                <h2 className="main-title fw-500 tx-dark">
-                  We’r the top rated agency.
-                </h2>
-              </div>
-            </div>
-          </div>
-          <div className="row">
-            <div className="col-xl-8 col-lg-9 ms-auto">
-              <div className="ps-xxl-5" data-aos="fade-left">
-                <h6 className="mb-30">Our History &amp; Goal.</h6>
-                <p className="text-lg tx-dark">
-Bridge International for Academic Services is the top and the oldest choice for international education in Jordan demonstrating 29 years of consistent educational excellence. We guide students to achieve their academic dreams abroad in the UK, USA, Canada, Australia, New Zealand and all over Europe. We offer counseling for Foundation, Bachelor's, Master's, and PhD programs, to over 600 and continuously growing partners, esteemed universities, colleges, and language centers to ensure a perfect academic fit.
-                </p>
-                <div className="row">
-                
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        {/* /.container */}
-
-        <img
-          src="/images/shape/shape_171.svg"
-          alt="shape"
-          className="lazy-img shapes shape-one"
-        />
-        <img
-          src="/images/shape/shape_172.svg"
-          alt="shape"
-          className="lazy-img shapes shape-two"
-        />
-      </div>
-      {/* /.fancy-feature-fiftyOne */}
-
       {/* <!-- 
 			=============================================
 				Feature Section Fifty Two
 			============================================== 
 			--> */}
-      <VideoBlock />
+      <TextVideoBlock />
 
       {/* <!-- /.fancy-feature-fiftyTwo --> */}
 

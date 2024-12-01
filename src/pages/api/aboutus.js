@@ -9,7 +9,7 @@ export default async function handler(req, res) {
       if (rows.length > 0) {
         res.status(200).json({ data: rows[0] });
       } else {
-        res.status(404).json({ message: "team not found" });
+        res.status(404).json({ message: "about us not found" });
       }
     }
   } catch (error) {
