@@ -1,7 +1,6 @@
 "use client";
 import DefaulHeader from "@/src/components/header/DefaulHeader";
 import DefaultFooter from "@/src/components/footer/DefaultFooter";
-import Faq from "@/src/components/services/Faq";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import { useUniversities } from "@/src/hooks";

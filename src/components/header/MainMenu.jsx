@@ -1,13 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import {
-  menuItems,
-  pagesItems,
-  portfolioItems,
-  blogItems,
-  contactItems,
-} from "@/src/data/menu";
 
 import Image from "next/image";
 import { usePathname } from "next/navigation";

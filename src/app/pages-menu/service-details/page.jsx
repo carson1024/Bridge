@@ -8,7 +8,6 @@ import { useServiceById } from "@/src/hooks";
 import ServiceSidebar from "@/src/components/common/ServiceSidebar";
 import { useSearchParams } from "next/navigation";
 import SpinnerShow from "@/src/components/common/SpinnerShow";
-import Partner from "@/src/components/feature-sass/Partner";
 
 const PortfolioV1 = () => {
   const router = useSearchParams();

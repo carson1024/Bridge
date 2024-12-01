@@ -1,16 +1,14 @@
 import DefaulHeader from "@/src/components/header/DefaulHeader";
 import DefaultFooter from "@/src/components/footer/DefaultFooter";
 import Partners from "@/src/components/services/Partners";
-import Faq from "@/src/components/services/Faq";
-import Block from "@/src/components/services/Block";
 import Team3 from "@/src/components/team/Team3";
 import Link from "next/link";
 import VideoBlock from "@/src/components/about/VideoBlock";
-import Counter from "@/src/components/about/Counter";
 export const metadata = {
   title: "About Us",
 };
 const AboutUsV1 = () => {
+  
   const features = [
     { text: "Amazing communication." },
     { text: "Best trending designing experience." },

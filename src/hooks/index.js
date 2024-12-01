@@ -69,6 +69,26 @@ export function useTeam() {
   };
 }
 
+export function useAboutUs() {
+  const { data, error } = useSWR(`/api/aboutus`, fetcher);
+
+  return {
+    about: data?.data,
+    isLoading: !data && !error,
+    isError: error,
+  };
+}
+
+export function useContactUs() {
+  const { data, error } = useSWR(`/api/contactus`, fetcher);
+
+  return {
+    contact: data?.data,
+    isLoading: !data && !error,
+    isError: error,
+  };
+}
+
 export function useCountries() {
   const { data, error } = useSWR("/api/countries", fetcher);
 

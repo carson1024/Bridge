@@ -2,9 +2,7 @@
 import { useBlogs } from "@/src/hooks";
 import Image from "next/image";
 import Link from "next/link";
-import Blog3 from "../../blog/Blog3";
 import { useState } from "react";
-import blog from "@/src/data/blog";
 
 const Blog = () => {
   const [searchTerm, setSearchTerm] = useState("");

@@ -3,8 +3,6 @@ import Partner from "@/src/components/feature-sass/Partner";
 
 import Footer from "@/src/components/footer/Footer";
 import DefaulHeader from "@/src/components/header/DefaulHeader";
-import AppBanner from "@/src/components/home-page/home-1/AppBanner";
-import Banner from "@/src/components/home-page/home-1/Banner";
 import Block from "@/src/components/home-page/home-1/Block";
 import Blog from "@/src/components/home-page/home-1/Blog";
 import ContactForm from "@/src/components/home-page/home-1/ContactForm";

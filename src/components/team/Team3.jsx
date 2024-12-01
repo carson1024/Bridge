@@ -2,33 +2,6 @@
 import { useTeam } from "@/src/hooks";
 import Image from "next/image";
 
-const teamMembers = [
-  {
-    id: 1,
-    name: "Name",
-    role: "Position",
-    imgSrc: "/images/team/img_04.jpg",
-  },
-  {
-    id: 2,
-    name: "Name",
-    role: "Position",
-    imgSrc: "/images/team/img_05.jpg",
-  },
-  {
-    id: 3,
-    name: "Name",
-    role: "Position",
-    imgSrc: "/images/team/img_06.jpg",
-  },
-  {
-    id: 4,
-    name: "Name",
-    role: "Position",
-    imgSrc: "/images/team/img_07.jpg",
-  },
-];
-
 const Team3 = () => {
   const {teams, isLoading, isError } = useTeam();
   console.log('Teams',teams)

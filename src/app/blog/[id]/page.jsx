@@ -1,16 +1,7 @@
 'use client'
 import DefaulHeader from "@/src/components/header/DefaulHeader";
 import DefaultFooter from "@/src/components/footer/DefaultFooter";
-import SearchBox from "@/src/components/blog/SearchBox";
-import Category from "@/src/components/blog/Category";
 import RecentPost from "@/src/components/blog/RecentPost";
-import BannerPost from "@/src/components/blog/BannerPost";
-import Tag from "@/src/components/blog/blog-details/Tag";
-import SocialShare from "@/src/components/blog/blog-details/SocialShare";
-import SingleComments from "@/src/components/blog/blog-details/SingleComments";
-import CommentBox from "@/src/components/blog/blog-details/CommentBox";
-import Link from "next/link";
-import blogsData from "@/src/data/blog";
 import Image from "next/image";
 import { useBlogs } from "@/src/hooks";
 import { useState } from "react";
@@ -24,7 +15,7 @@ const DynamicBlogDetails = ({ params }) => {
   const {blogs} = useBlogs({ searchQuery: searchTerm, page: currentPage });
   const id = params.id;
   console.log('The blogs:', blogs);
-  const blog = blogs?.find((item) => item.id == id) || blogsData[0];
+  const blog = blogs?.find((item) => item.id == id) || {};
   const createdAt = new Date(blog.created_at);
 
   const formattedDate = createdAt.toLocaleDateString("en-GB", {
