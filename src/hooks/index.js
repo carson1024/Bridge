@@ -1,8 +1,10 @@
 import useSWR from "swr";
 import { fetcher } from "../lib/fetcher";
+import { useTranslation } from "react-i18next";
 
 export function useTestimonials() {
-  const { data, error, mutate } = useSWR("/api/testimonials", fetcher);
+  const { i18n } = useTranslation();
+  const { data, error, mutate } = useSWR(`/api/testimonials?locale=${i18n.language}`, fetcher);
 
   return {
     testimonials: data?.data,
@@ -13,7 +15,9 @@ export function useTestimonials() {
 }
 
 export function useBlogs({ searchQuery = "", page = 1 }) {
+  const { i18n } = useTranslation();
   const queryString = new URLSearchParams({
+    locale: i18n.language,
     search: searchQuery || "",
     page: page.toString(),
   }).toString();
@@ -29,7 +33,8 @@ export function useBlogs({ searchQuery = "", page = 1 }) {
 }
 
 export function useBranches() {
-  const { data, error, mutate } = useSWR("/api/branches", fetcher);
+  const { i18n } = useTranslation();
+  const { data, error, mutate } = useSWR(`/api/branches?locale=${i18n.language}`, fetcher);
 
   return {
     branches: data?.data,
@@ -40,7 +45,8 @@ export function useBranches() {
 }
 
 export function useServices() {
-  const { data, error, mutate } = useSWR("/api/service", fetcher);
+  const { i18n } = useTranslation();
+  const { data, error, mutate } = useSWR(`/api/service?locale=${i18n.language}`, fetcher);
 
   return {
     services: data?.data,
@@ -51,7 +57,8 @@ export function useServices() {
 }
 
 export function useServiceById(id) {
-  const { data, error } = useSWR(id ? `/api/service/${id}` : null, fetcher);
+  const { i18n } = useTranslation();
+  const { data, error } = useSWR(id ? `/api/service/${id}?locale=${i18n.language}` : null, fetcher);
 
   return {
     service: data?.data,
@@ -60,7 +67,8 @@ export function useServiceById(id) {
   };
 }
 export function useTeam() {
-  const { data, error } = useSWR(`/api/team`, fetcher);
+  const { i18n } = useTranslation();
+  const { data, error } = useSWR(`/api/team?locale=${i18n.language}`, fetcher);
 
   return {
     teams: data?.data,
@@ -70,7 +78,8 @@ export function useTeam() {
 }
 
 export function useAboutUs() {
-  const { data, error } = useSWR(`/api/aboutus`, fetcher);
+  const { i18n } = useTranslation();
+  const { data, error } = useSWR(`/api/aboutus?locale=${i18n.language}`, fetcher);
 
   return {
     about: data?.data,
@@ -80,7 +89,8 @@ export function useAboutUs() {
 }
 
 export function useContactInfo() {
-  const { data, error } = useSWR(`/api/contactinfo`, fetcher);
+  const { i18n } = useTranslation();
+  const { data, error } = useSWR(`/api/contactinfo?locale=${i18n.language}`, fetcher);
 
   return {
     contact: data?.data,
@@ -90,7 +100,8 @@ export function useContactInfo() {
 }
 
 export function useCountries() {
-  const { data, error } = useSWR("/api/countries", fetcher);
+  const { i18n } = useTranslation();
+  const { data, error } = useSWR(`/api/countries?locale=${i18n.language}`, fetcher);
 
   return {
     countries: data?.countries,
@@ -100,7 +111,8 @@ export function useCountries() {
 }
 
 export function useUniversities(location) {
-  const { data, error } = useSWR(location ? `/api/universities?location=${location}` : null, fetcher);
+  const { i18n } = useTranslation();
+  const { data, error } = useSWR(location ? `/api/universities??locale=${i18n.language}&location=${location}` : null, fetcher);
 
   return {
     universities: data?.universities,
@@ -110,7 +122,8 @@ export function useUniversities(location) {
 }
 
 export function useUniversityDetail(universityName) {
-  const { data, error } = useSWR(universityName ? `/api/universities/${universityName}` : null, fetcher);
+  const { i18n } = useTranslation();
+  const { data, error } = useSWR(universityName ? `/api/universities/${universityName}?locale=${i18n.language}` : null, fetcher);
 
   return {
     university: data?.university,

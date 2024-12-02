@@ -1,3 +1,4 @@
+"use client";
 import Link from "next/link";
 import Partner from "@/src/components/feature-sass/Partner";
 
@@ -14,9 +15,9 @@ import WhyChoose from "@/src/components/home-page/home-1/WhyChoose";
 import Counter from "@/src/components/home-page/home-4/Counter";
 import { useTranslation } from 'react-i18next';
 
-export const metadata = {
-  title: "Insurance",
-};
+// export const metadata = {
+//   title: "Insurance",
+// };
 
 const Insurance = () => {
   const { t } = useTranslation();

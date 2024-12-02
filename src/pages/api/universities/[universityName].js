@@ -3,14 +3,17 @@ import { createConnection } from "@/src/lib/db";
 
 export default async function handler(req, res) {
   if (req.method === "GET") {
-    const { universityName } = req.query; // Extract the university name from the URL
+    const { universityName, locale } = req.query; // Extract the university name from the URL
 
     const connection = await createConnection();
+
+    const suffix_locale = (!locale || locale == 'en') ? '' : '_' + locale;
+    const select = `name${suffix_locale} as name, description${suffix_locale} as description, Images, location`;
 
     try {
       // Fetch the university details by name
       const [rows] = await connection.execute(
-        "SELECT * FROM universities WHERE name = ?",
+        `SELECT ${select} FROM universities WHERE name = ?`,
         [universityName]
       );
 

@@ -4,13 +4,15 @@ export default async function handler(req, res) {
   const connection = await createConnection();
 
   try {
-    const { id } = req.query;
+    const { id, locale } = req.query;
     console.log('The id back: ',id)
 
+    const suffix_locale = (!locale || locale == 'en') ? '' : '_' + locale;
+    const select = `service_name${suffix_locale} as service_name, description${suffix_locale} as description, image`;
     if (req.method === 'GET') {
       if (id) {
         // Fetch specific service by ID
-        const [rows] = await connection.execute('SELECT * FROM services WHERE id = ?', [id]);
+        const [rows] = await connection.execute(`SELECT ${select} FROM services WHERE id = ?`, [id]);
         if (rows.length > 0) {
           res.status(200).json({ data: rows[0] });
         } else {
@@ -18,7 +20,7 @@ export default async function handler(req, res) {
         }
       } else {
         // Fetch all services
-        const [rows] = await connection.execute('SELECT * FROM services');
+        const [rows] = await connection.execute(`SELECT ${select} FROM services`);
         res.status(200).json({ data: rows });
       }
     } else {

@@ -2,15 +2,18 @@ import { createConnection } from "@/src/lib/db";
 
 export default async function handler(req, res) {
   if (req.method === "GET") {
-    const { search, page = 1 } = req.query;
+    const { locale, search, page = 1 } = req.query;
     const limit = 10; // Define the number of blogs per page
     const offset = (page - 1) * limit;
 
     const connection = await createConnection();
 
+    const suffix_locale = (!locale || locale == 'en') ? '' : '_' + locale;
+    const select = `title${suffix_locale} as title, short_description${suffix_locale} as short_description, full_article${suffix_locale} as full_article, image`;
+
     try {
       // Construct SQL with filtering conditions
-      let query = "SELECT * FROM articles WHERE 1=1";
+      let query = `SELECT ${select} FROM articles WHERE 1=1`;
       const queryParams = [];
 
       // Check if search query is provided

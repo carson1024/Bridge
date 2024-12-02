@@ -6,7 +6,7 @@ import { useTestimonials } from "@/src/hooks";
 
 const Testimonial = () => {
   const { testimonials, isLoading, isError } = useTestimonials();
-console.log('here',testimonials);  
+  console.log('here',testimonials);  
   var settings = {
     dots: true,
     infinite: false,

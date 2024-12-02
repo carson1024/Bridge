@@ -5,11 +5,11 @@ import Partners from "@/src/components/services/Partners";
 import Team3 from "@/src/components/team/Team3";
 import Link from "next/link";
 import TextVideoBlock from "@/src/components/about/TextVideoBlock";
-import { useTranslation } from 'react-i18next';
+import { Trans, useTranslation } from 'react-i18next';
 
-export const metadata = {
-  title: "About Us",
-};
+// export const metadata = {
+//   title: "About Us",
+// };
 
 const AboutUsV1 = () => {
   const { t } = useTranslation();
@@ -60,11 +60,7 @@ const AboutUsV1 = () => {
               className="cr-text text-center text-lg tx-dark mt-75 lg-mt-50"
               data-aos="fade-up"
             >
-              {
-                t.rich('our_staff', {
-                  count: (chunks) => <span className='text-decoration-underline fw-500'> 50+ </span>
-                })
-              }
+              <Trans i18nKey="our_staff" components={{ count: <span className='text-decoration-underline fw-500'> 50+ </span> }} />
             </p>
             <div className="text-center md-mt-20">
               <Link

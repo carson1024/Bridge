@@ -2,11 +2,14 @@ import { createConnection } from "@/src/lib/db";
 
 export default async function handler(req, res) {
   if (req.method === "GET") {
-    const { location } = req.query; // Get the country from the query parameter
+    const { location, locale } = req.query; // Get the country from the query parameter
+    const suffix_locale = (!locale || locale == 'en') ? '' : '_' + locale;
+    const select = `name${suffix_locale} as name, description${suffix_locale} as description, Images, location`;
+    
     const connection = await createConnection();
     try {
       const [rows] = await connection.execute(
-        "SELECT * FROM universities WHERE location = ?",
+        `SELECT ${select} FROM universities WHERE location = ?`,
         [location]
       );
       res.status(200).json({ universities: rows });

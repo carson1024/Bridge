@@ -5,11 +5,14 @@ export default async function handler(req, res) {
 
   try {
     if (req.method === "GET") {
-      const { id } = req.query;
+      const { id, locale } = req.query;
+
+      const suffix_locale = (!locale || locale == 'en') ? '' : '_' + locale;
+      const select = `service_name${suffix_locale} as service_name, description${suffix_locale} as description, image`;
 
       if (id) {
         const [rows] = await connection.execute(
-          "SELECT * FROM services WHERE id = ?",
+          `SELECT ${select} FROM services WHERE id = ?`,
           [id]
         );
         if (rows.length > 0) {
@@ -18,7 +21,7 @@ export default async function handler(req, res) {
           res.status(404).json({ message: "Service not found" });
         }
       } else {
-        const [rows] = await connection.execute("SELECT * FROM services");
+        const [rows] = await connection.execute(`SELECT ${select} FROM services`);
         res.status(200).json({ data: rows });
       }
     } else {
