@@ -1,31 +1,32 @@
-"use client";
+'use client';
 import DefaulHeader from "@/src/components/header/DefaulHeader";
 import DefaultFooter from "@/src/components/footer/DefaultFooter";
 import { useUniversityDetail } from "@/src/hooks";
 import { useSearchParams } from "next/navigation";
 import SpinnerShow from "@/src/components/common/SpinnerShow";
 import Link from "next/link";
+import { useTranslation } from 'react-i18next'; // Assuming next-i18next for translations
 
 const UniversityDetail = () => {
+  const { t } = useTranslation();
   const router = useSearchParams();
   const universityName = router.get("university");
-  const { university, isLoading, isError } = useUniversityDetail(universityName); // Fetch university data
+  const { university, isLoading, isError } = useUniversityDetail(universityName);
 
   if (isLoading) {
     return <SpinnerShow />;
   }
 
   if (isError) {
-    return <p>Error loading university details.</p>;
+    return <p>{t("error_loading_university")}</p>;
   }
 
   if (!university) {
-    return <p>No university found.</p>;
+    return <p>{t("no_university_found")}</p>;
   }
 
   return (
     <>
-      {/* Header */}
       <DefaulHeader />
 
       {/* University Details Section */}
@@ -41,7 +42,7 @@ const UniversityDetail = () => {
               <div className="university-details-meta text-center">
                 <h2 className="main-title tx-dark mb-30">{university.name}</h2>
                 <p className="text-lg tx-dark mb-20">
-                  Location: {university.location}
+                  {t("location", { location: university.location })}
                 </p>
                 <p className="mb-50">{university.description}</p>
 
@@ -49,7 +50,7 @@ const UniversityDetail = () => {
                   href="/contact/contact"
                   className="btn-twentyOne fw-500 tran3s"
                 >
-                  Contact Us
+                  {t("contact_us")}
                 </Link>
               </div>
             </div>
@@ -57,7 +58,7 @@ const UniversityDetail = () => {
         </div>
       </div>
       {/* /.university-details */}
-      {/* Footer */}
+
       <DefaultFooter />
     </>
   );

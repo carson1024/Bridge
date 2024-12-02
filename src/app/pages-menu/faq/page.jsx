@@ -1,49 +1,48 @@
+"use client";
 import DefaulHeader from "@/src/components/header/DefaulHeader";
 import DefaultFooter from "@/src/components/footer/DefaultFooter";
 import FaqAccordion from "@/src/components/faqs/FaqAccordion";
 import Link from "next/link";
-export const metadata = {
-  title: "Faq's  ",
-};
+import { useTranslation } from 'react-i18next';
+
+// export const metadata = {
+//   title: "Faq's",
+// };
+
 const Faq = () => {
+  const { t } = useTranslation();
+
   return (
     <>
-      {/* <!-- 
-      =============================================
+      {/* =============================================
       Theme Default Menu
-      ============================================== 	
-      --> */}
+      ============================================== */}
       <DefaulHeader />
 
-      {/* 
-			=============================================
-				Feature Section Fifty One
-			============================================== 
-			*/}
+      {/* =============================================
+      Feature Section Fifty One
+      ============================================== */}
       <div className="fancy-feature-fiftyOne position-relative mt-200">
         <div className="container">
           <div className="row">
             <div className="col-lg-7 text-center m-auto" data-aos="fade-up">
               <div className="title-style-five">
                 <div className="sc-title-two fst-italic position-relative d-inline-block">
-                  FAQ
+                  {t("faq")}
                 </div>
                 <h2 className="main-title fw-500 tx-dark">
-                  Questions &amp; Answers
+                  {t("questions_and_answers")}
                 </h2>
               </div>
             </div>
           </div>
         </div>
-        {/* /.container */}
       </div>
       {/* /.fancy-feature-fiftyOne */}
 
-      {/* 
-			=============================================
-				Feature Section Thirty Three
-			============================================== 
-			*/}
+      {/* =============================================
+      Feature Section Thirty Three
+      ============================================== */}
       <div className="fancy-feature-thirtyThree mt-100 lg-mt-80">
         <div className="container">
           <div className="border-bottom pb-100 lg-pb-70">
@@ -51,28 +50,24 @@ const Faq = () => {
               <FaqAccordion />
               <img
                 src="/images/shape/shape_133.svg"
-                alt="shape"
+                alt={t("shape")}
                 className="lazy-img shapes shape-one"
               />
             </div>
-            {/* /.bg-wrapper */}
 
-            <div className="text-center  mt-80 lg-mt-50" data-aos="fade-up">
-              <h3 className="fw-bold tx-dark mb-30">Didn’t get your answer?</h3>
+            <div className="text-center mt-80 lg-mt-50" data-aos="fade-up">
+              <h3 className="fw-bold tx-dark mb-30">{t("didnt_get_answer")}</h3>
               <Link href="/contact/contact" className="btn-twentyOne fw-500 tran3s">
-                Contact us
+                {t("contact_us")}
               </Link>
             </div>
           </div>
         </div>
       </div>
-      {/* /.fancy-feature-thirtyThree */}
 
-      {/* 
-        =============================================
-        Contact Section One
-        ============================================== 
-        */}
+      {/* =============================================
+      Contact Section One
+      ============================================== */}
       <DefaultFooter />
     </>
   );

@@ -3,10 +3,15 @@ import ContactForm from "@/src/components/contact/ContactForm";
 import Map from "@/src/components/contact/Map";
 import DefaultFooter from "@/src/components/footer/DefaultFooter";
 import DefaulHeader from "@/src/components/header/DefaulHeader";
+import { useTranslation } from 'react-i18next';
+
 export const metadata = {
-  title: "Contact  ",
+  title: "Contact",
 };
+
 const ContactV1 = () => {
+  const { t } = useTranslation();
+
   return (
     <>
       {/* <!-- 
@@ -27,9 +32,11 @@ const ContactV1 = () => {
             <div className="col-lg-7 text-center m-auto" data-aos="fade-up">
               <div className="title-style-five mb-65 lg-mb-40">
                 <div className="sc-title-two fst-italic position-relative d-inline-block">
-                  Contact info
+                  {t("contact_info")}
                 </div>
-                <h2 className="main-title fw-500 tx-dark">Get in Touch.</h2>
+                <h2 className="main-title fw-500 tx-dark">
+                  {t("get_in_touch")}
+                </h2>
               </div>
             </div>
           </div>
@@ -62,7 +69,7 @@ const ContactV1 = () => {
                 className="tx-dark text-center mt-100 mb-80 lg-mt-40 lg-mb-40"
                 data-aos="fade-up"
               >
-                Any question? Send us message.
+                {t("any_question_send_us_message")}
               </h2>
             </div>
             <div className="col-xl-11 m-auto">

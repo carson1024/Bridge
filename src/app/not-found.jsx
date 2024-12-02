@@ -1,36 +1,31 @@
+'use client';
 import Link from "next/link";
-
 import DefaulHeader from "@/src/components/header/DefaulHeader";
 import Image from "next/image";
+import { useTranslation } from 'react-i18next'; // Assuming next-i18next for translations
+
 export const metadata = {
-  title: "404  ",
+  title: "404",
 };
+
 const Pricing = () => {
+  const { t } = useTranslation();
+
   return (
     <>
-      {/* <!-- 
-      =============================================
-      Theme Default Menu
-      ============================================== 	
-      --> */}
       <DefaulHeader />
 
-      {/* 
-			=============================================
-			Error Page
-			============================================== 
-			*/}
+      {/* Error Page */}
       <div className="error-page-content d-flex align-items-center justify-content-center">
         <div className="container">
           <div className="row">
             <div className="col-xxl-6 col-lg-7 m-auto">
-              <h3>Opps! you’r on the wrong place.</h3>
+              <h3>{t("error_heading")}</h3>
               <p className="me-xxl-5 ms-xxl-5 pt-15 pb-20">
-                Can not find what you need? Take a moment and do a search below
-                or start from our Homepage.
+                {t("error_message")}
               </p>
               <Link href="/" className="btn-twentyOne fw-500 tran3s">
-                Back to home
+                {t("back_to_home")}
               </Link>
             </div>
           </div>
@@ -42,7 +37,6 @@ const Pricing = () => {
             className="m-auto"
           />
         </div>
-        {/* End .container */}
 
         <Image
           width={1915}
@@ -52,7 +46,6 @@ const Pricing = () => {
           className="shapes shape-one w-100"
         />
       </div>
-      {/* /.error-page-content */}
     </>
   );
 };

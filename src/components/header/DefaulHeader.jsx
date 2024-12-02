@@ -4,8 +4,10 @@ import { useEffect, useState } from "react";
 import MainMenu from "./MainMenu";
 import Link from "next/link";
 import Image from "next/image";
+import { useTranslation } from 'react-i18next';
 
 const DefaulHeader = () => {
+  const { i18n } = useTranslation();
   const [navbar, setNavbar] = useState(false);
 
   const changeBackground = () => {
@@ -48,6 +50,13 @@ const DefaulHeader = () => {
               className="btn-twentyOne fw-500 tran3s d-none d-lg-block"
             >
               Contact us
+            </Link>
+            <Link
+              href="javscript:;"
+              onClick={() => i18n.changeLanguage(i18n.language == 'en' ? 'ar' : 'en')}
+              className="btn-twentyOne fw-500 tran3s d-none d-lg-block"
+            >
+              { i18n.language.toUpperCase() }
             </Link>
           </div>{" "}
           {/* /.right-widget */}

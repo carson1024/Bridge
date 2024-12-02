@@ -1,10 +1,11 @@
+"use client";
 import DefaulHeader from "@/src/components/header/DefaulHeader";
 import DefaultFooter from "@/src/components/footer/DefaultFooter";
 import PricingTable from "@/src/components/pricing/Pricing";
 import Link from "next/link";
-export const metadata = {
-  title: "Pricing  ",
-};
+// export const metadata = {
+//   title: "Pricing  ",
+// };
 const Pricing = () => {
   return (
     <>

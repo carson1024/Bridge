@@ -1,26 +1,26 @@
-import Link from "next/link";
+"use client";
 import DefaultFooter from "@/src/components/footer/DefaultFooter";
 import DefaulHeader from "@/src/components/header/DefaulHeader";
 import Leads from "@/src/components/home-page/home-13/Leads";
+import { useTranslation } from 'react-i18next';
 
-export const metadata = {
-  title: "Branches  ",
-};
-const ServiceV3 = () => {
+// export const metadata = {
+//   title: "Branches",
+// };
+
+const Branches = () => {
+  const { t } = useTranslation();
+
   return (
     <>
-      {/* <!-- 
-      =============================================
+      {/* =============================================
       Theme Default Menu
-      ============================================== 	
-      --> */}
+      ============================================== */}
       <DefaulHeader />
 
-      {/* 
-        =============================================
-        Feature Section Thirty One
-        ============================================== 
-        */}
+      {/* =============================================
+      Feature Section Thirty One
+      ============================================== */}
       <div className="fancy-feature-thirtyOne position-relative bg-white zn2 pt-225 pb-140 lg-pt-200 lg-pb-50">
         <div className="container">
           <div className="row">
@@ -30,87 +30,43 @@ const ServiceV3 = () => {
                 data-aos="fade-up"
               >
                 <h2 className="main-title font-recoleta fw-normal tx-dark">
-                  
                   <span className="position-relative">
-                    {" "}
-                    Branches
-                    <img src="/images/shape/shape_122.svg" alt="icon shape" />
+                    {t("branches")}
+                    <img src="/images/shape/shape_122.svg" alt={t("icon_shape")} />
                   </span>
-                  
                 </h2>
-                <p className="fs-20 mt-20">
-                 Our Branches
-                </p>
+                <p className="fs-20 mt-20">{t("our_branches")}</p>
               </div>
-              {/* /.title-style-ten */}
             </div>
           </div>
-          {/* End .row */}
-
           <div className="row">
             <Leads />
           </div>
         </div>
-        {/* /.container */}
-
         <img
           src="/images/shape/shape_124.svg"
-          alt="icon shape"
+          alt={t("icon_shape")}
           className="lazy-img shapes shape-one"
         />
         <img
           src="/images/shape/shape_125.svg"
-          alt="icon shape"
+          alt={t("icon_shape")}
           className="lazy-img shapes shape-two"
         />
       </div>
-      {/* /.fancy-feature-thirtyOne */}
 
-      {/* 
-			=============================================
-				Feature Section Thirty Eight
-			============================================== 
-			*/}
-     
-        <img
-          src="/images/shape/shape_130.svg"
-          alt="shape"
-          className="lazy-img shapes shape-one"
-        />
-        <img
-          src="/images/shape/shape_131.svg"
-          alt="shape"
-          className="lazy-img shapes shape-two"
-        />
-      {/* /.feedback-section-ten */}
-
-      {/*
-			=====================================================
-				Fancy Short Banner Twelve
-			=====================================================
-			*/}
-    
-      {/* /.fancy-short-banner-twelve */}
-
-      {/*
-			=====================================================
-				Footer
-			=====================================================
-			*/}
-      
-        {/* /.bg-wrapper */}
-
-        <DefaultFooter />
-        <div className="shapes shape-one" />
-        <img
-          src="/images/shape/shape_134.svg"
-          alt="shape"
-          className="lazy-img shapes shape-two"
-        />
-     
-      {/* /.footer-style-nine */}
+      {/* =============================================
+      Footer Section
+      ============================================== */}
+      <DefaultFooter />
+      <div className="shapes shape-one" />
+      <img
+        src="/images/shape/shape_134.svg"
+        alt={t("shape")}
+        className="lazy-img shapes shape-two"
+      />
     </>
   );
 };
 
-export default ServiceV3;
+export default Branches;
