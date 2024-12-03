@@ -1,3 +1,4 @@
+"use client"
 import Link from "next/link";
 import Image from "next/image";
 import { useBlogs } from "@/src/hooks"; // Custom hook for fetching blogs

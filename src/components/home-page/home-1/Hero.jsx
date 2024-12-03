@@ -50,15 +50,15 @@ const Hero1 = () => {
                 layout='fill'
                 objectFit='cover'
               />
-              <button 
-                className="position-absolute z-1 btn-seven fw-500 tran3s"
+              {/* <button 
+                className="position-absolute z-1 btn-eight fw-500 tran3s"
                 style={{
-                  top: '50%',
+                  top: '40%',
                   left: '100px'
                 }}
               >
                 Call to action
-              </button>
+              </button> */}
             </div>
           </Link>)
         }
