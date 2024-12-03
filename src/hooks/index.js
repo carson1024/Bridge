@@ -88,6 +88,16 @@ export function useAboutUs() {
   };
 }
 
+export function useSiteInfo() {
+  const { data, error } = useSWR(`/api/siteinfo`, fetcher);
+
+  return {
+    site_info: data?.data,
+    isLoading: !data && !error,
+    isError: error,
+  };
+}
+
 export function useContactInfo() {
   const { i18n } = useTranslation();
   const { data, error } = useSWR(`/api/contactinfo?locale=${i18n.language}`, fetcher);

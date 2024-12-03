@@ -5,7 +5,7 @@ export default async function handler(req, res) {
     const connection = await createConnection();
     const { locale } = req.query;
     const suffix_locale = (!locale || locale == 'en') ? '' : '_' + locale;
-    const select = `name${suffix_locale} as name, image`;
+    const select = `name${suffix_locale} as name, image, alt`;
 
     try {
       const [rows] = await connection.execute(`SELECT ${select} FROM countries`);

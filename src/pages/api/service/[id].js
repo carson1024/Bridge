@@ -8,7 +8,7 @@ export default async function handler(req, res) {
     console.log('The id back: ',id)
 
     const suffix_locale = (!locale || locale == 'en') ? '' : '_' + locale;
-    const select = `service_name${suffix_locale} as service_name, description${suffix_locale} as description, image`;
+    const select = `service_name${suffix_locale} as service_name, description${suffix_locale} as description, image, alt`;
     if (req.method === 'GET') {
       if (id) {
         // Fetch specific service by ID

@@ -1,12 +1,14 @@
+"use client";
+
 import Insurance from "./home/insurance/page";
 import { NextUIProvider } from "@nextui-org/react";
 import Head from "next/head";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-export const metadata = {
-  title: "Bridge || Bridge International for Academic Services",
-};
+// export const metadata = {
+//   title: "Bridge || Bridge International for Academic Services",
+// };
 
 const MainRoot = () => {
   return (

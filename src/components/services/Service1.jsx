@@ -26,7 +26,7 @@ const Service1 = () => {
               <div className="image">
                 <img
                   src={"https://admin.bridge.jo/uploads/" + service.image}
-                  alt={service.name}
+                  alt={service.alt}
                   className="lazy-img m-auto"
                   style={{
                     maxWidth: "150px",

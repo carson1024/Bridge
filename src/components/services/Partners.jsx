@@ -1,3 +1,4 @@
+"use client";
 const Partners = () => {
   const partners = [
     { name: "Google", className: "br-name" },

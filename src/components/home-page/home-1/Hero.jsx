@@ -10,11 +10,12 @@ import "slick-carousel/slick/slick-theme.css";
 
 const Hero1 = () => {
   const settings = {
+    arrows: true,
     dots: false,
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
-    infinite: true,
+    infinite: false,
     autoplay: true,
     autoplaySpeed: 5000,
   };
@@ -49,6 +50,15 @@ const Hero1 = () => {
                 layout='fill'
                 objectFit='cover'
               />
+              <button 
+                className="position-absolute z-1 btn-seven fw-500 tran3s"
+                style={{
+                  top: '50%',
+                  left: '100px'
+                }}
+              >
+                Call to action
+              </button>
             </div>
           </Link>)
         }
@@ -57,7 +67,6 @@ const Hero1 = () => {
         <div className="row">
           <div
             className="col-lg-9 col-md-10 m-auto text-center"
-            data-aos="fade-up"
           >
             {/* <h1 className="hero-heading fw-500 tx-dark">
               Let your <span>Dream</span>  Come True.

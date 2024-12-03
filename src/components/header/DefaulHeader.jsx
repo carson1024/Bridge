@@ -5,6 +5,7 @@ import MainMenu from "./MainMenu";
 import Link from "next/link";
 import Image from "next/image";
 import { useTranslation } from 'react-i18next';
+import { useSiteInfo } from "@/src/hooks";
 
 const icons = [
   {
@@ -39,6 +40,7 @@ const IconItem = ({ icon, href }) => {
 const DefaulHeader = () => {
   const { i18n } = useTranslation();
   const [navbar, setNavbar] = useState(false);
+  const { site_info } = useSiteInfo();
 
   const changeBackground = () => {
     if (window.scrollY >= 10) {
@@ -66,8 +68,8 @@ const DefaulHeader = () => {
           <div className="logo order-lg-0">
             <Link href="/" className="d-block">
               <Image
-                src="/images/logo/bridge-logo.png"
-                alt="logo"
+                src={ site_info && site_info.logo_image ? `${process.env.NEXT_PUBLIC_BACKEND_UPLOAD_URL}${site_info.logo_image}` : "/images/logo/bridge-logo.png" }
+                alt={ site_info && site_info.alt || "logo" }
                 width={150}
                 height={120}
               />

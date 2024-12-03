@@ -71,7 +71,7 @@ const ServiceDetails = () => {
                 </h2>
                 <img
                   src={`${process.env.NEXT_PUBLIC_BACKEND_UPLOAD_URL}${service.image}`}
-                  alt={t("media")}
+                  alt={service.alt}
                   className="main-img-meta"
                 />
                 <p>{service.description}</p>
