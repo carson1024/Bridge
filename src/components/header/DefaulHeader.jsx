@@ -43,7 +43,7 @@ const DefaulHeader = () => {
               />
             </Link>
           </div>
-          <div className="right-widget ms-auto d-flex align-items-center order-lg-3">
+          <div className="right-widget ml-auto d-flex align-items-center order-lg-3">
          
             <Link
               href="/contact/contact"

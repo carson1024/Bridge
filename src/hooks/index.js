@@ -99,6 +99,16 @@ export function useContactInfo() {
   };
 }
 
+export function useSlider() {
+  const { data, error } = useSWR(`/api/slider`, fetcher);
+
+  return {
+    slider: data?.data,
+    isLoading: !data && !error,
+    isError: error,
+  };
+}
+
 export function useCountries() {
   const { i18n } = useTranslation();
   const { data, error } = useSWR(`/api/countries?locale=${i18n.language}`, fetcher);
