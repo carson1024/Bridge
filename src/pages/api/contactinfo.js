@@ -5,7 +5,11 @@ export default async function handler(req, res) {
 
   try {
     if (req.method === "GET") {
-      const [rows] = await connection.execute("SELECT * FROM contact_us");
+      const { locale } = req.query;
+      const suffix_locale = (!locale || locale == 'en') ? '' : '_' + locale;
+      const select = `title${suffix_locale} as title, content${suffix_locale} as content, icon`;
+
+      const [rows] = await connection.execute(`SELECT ${select} FROM contact_us`);
       if (rows.length > 0) {
         res.status(200).json({ data: rows });
       } else {

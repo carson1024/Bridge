@@ -16,6 +16,7 @@ const nextConfig = ({
     locales: ["ar", "en"],
     defaultLocale: "en",
   },
+  reactStrictMode: false,
 });
 
 module.exports = nextConfig;

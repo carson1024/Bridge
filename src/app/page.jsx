@@ -1,4 +1,3 @@
-
 import Insurance from "./home/insurance/page";
 import { NextUIProvider } from "@nextui-org/react";
 import Head from "next/head";

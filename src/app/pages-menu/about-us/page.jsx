@@ -64,7 +64,7 @@ const AboutUsV1 = () => {
             </p>
             <div className="text-center md-mt-20">
               <Link
-                href="/pages-menu/team-v1"
+                href="/pages-menu/team"
                 className="btn-twentyTwo fw-500 tran3s"
                 data-aos="fade-left"
               >

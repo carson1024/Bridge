@@ -1,3 +1,5 @@
+"use client";
+
 import BlockContact from "@/src/components/contact/BlockContact";
 import ContactForm from "@/src/components/contact/ContactForm";
 import Map from "@/src/components/contact/Map";
@@ -5,9 +7,9 @@ import DefaultFooter from "@/src/components/footer/DefaultFooter";
 import DefaulHeader from "@/src/components/header/DefaulHeader";
 import { useTranslation } from 'react-i18next';
 
-export const metadata = {
-  title: "Contact",
-};
+// export const metadata = {
+//   title: "Contact",
+// };
 
 const ContactV1 = () => {
   const { t } = useTranslation();

@@ -27,7 +27,7 @@ export default function RootLayout({ children }) {
     <html lang={locale} dir={ dir(locale) }>
       <body>
       <I18nextProvider i18n={i18nConfig}>
-        <div className="main-page-wrapper">
+        <div className="main-page-wrapper" suppressHydrationWarning={true}>
           {children}
           <ScrollToTop />
         </div>

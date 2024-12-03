@@ -35,42 +35,41 @@ const Hero1 = () => {
         backgroundPosition: "center", // Center the background image
         backgroundRepeat: "no-repeat", // Avoid repeating the image
         height: "100vh", // Set the height to cover the viewport
+        paddingTop: "125px"
       }}
     >
+      <Slider {...settings}>
+        {
+          (slider || []).map((data) => <Link href={data.link || 'javascript:;'} className="d-block">
+            <div style={{width: '100%', height: 'calc(100vh - 350px)', position: 'relative'}}>
+              <Image
+                src={`${process.env.NEXT_PUBLIC_BACKEND_UPLOAD_URL}${data.image}`}
+                alt="logo"
+                fill={true}
+                layout='fill'
+                objectFit='cover'
+              />
+            </div>
+          </Link>)
+        }
+      </Slider>
       <div className="container">
         <div className="row">
           <div
             className="col-lg-9 col-md-10 m-auto text-center"
             data-aos="fade-up"
           >
-            <Slider {...settings}>
-              {
-                (slider || []).map((data) => <Link href={data.link || 'javascript:;'} className="d-block">
-                  <Image
-                    src={`${process.env.NEXT_PUBLIC_BACKEND_UPLOAD_URL}${data.image}`}
-                    alt="logo"
-                    width={1000}
-                    height={300}
-                  />
-                </Link>)
-              }
-            </Slider>
             {/* <h1 className="hero-heading fw-500 tx-dark">
               Let your <span>Dream</span>  Come True.
             </h1> */}
             <p className="text-lg tx-dark mt-45 mb-50 lg-mt-30 lg-mb-40">
-            Start your study journey through us!
+              Start your study journey through us!
             </p>
-            <div className="search-form-bg position-relative" data-aos="fade-up">
-          <FilterBox />
-          {/* /.search-area */}
-
-        
-        </div>
+            <div className="search-form-bg position-relative">
+              <FilterBox />
+              {/* /.search-area */}
+            </div>
             {/* End form */}
-
-            
-
           </div>
         </div>
       </div>

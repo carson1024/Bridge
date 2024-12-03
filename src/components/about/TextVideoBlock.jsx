@@ -6,7 +6,6 @@ import ModalVideo from "react-modal-video";
 
 const TextVideoBlock = () => {
   const {about, isLoading, isError } = useAboutUs();
-  console.log('AboutUs', about);
 
   const [isOpen, setOpen] = useState(false);
 
