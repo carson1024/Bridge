@@ -109,6 +109,16 @@ export function useContactInfo() {
   };
 }
 
+export function usePartners() {
+  const { data, error } = useSWR(`/api/partners`, fetcher);
+
+  return {
+    partners: data?.data,
+    isLoading: !data && !error,
+    isError: error,
+  };
+}
+
 export function useSlider() {
   const { data, error } = useSWR(`/api/slider`, fetcher);
 

@@ -1,6 +1,8 @@
 "use client";
 
+import { usePartners } from "@/src/hooks";
 import Image from "next/image";
+import Link from "next/link";
 import Slider from "react-slick";
 
 const Partner = () => {
@@ -35,27 +37,22 @@ const Partner = () => {
     ],
   };
 
-  const partnerLogos = [
-    "/images/logo/Plogo-37.png",
-    "/images/logo/Plogo-38.png",
-    "/images/logo/Plogo-39.png",
-    "/images/logo/Plogo-40.png",
-    "/images/logo/Plogo-41.png",
-    "/images/logo/Plogo-38.png",
-  ];
+  const { partners } = usePartners();
 
   return (
     <Slider {...settings} arrows={false}>
-      {partnerLogos.map((logo, index) => (
+      {(partners || []).map((data, index) => (
         <div className="item" key={index}>
           <div className="icon d-flex align-items-center justify-content-center">
-            <Image
-              width={109}
-              height={46}
-              style={{ objectFit: "contain" }}
-              src={logo}
-              alt="logo"
-            />
+            <Link href={data.link || 'javascript:;'} className="d-block">
+              <Image
+                width={109}
+                height={46}
+                style={{ objectFit: "contain" }}
+                src={data.logo}
+                alt={data.alt || ""}
+              />
+            </Link>
           </div>
         </div>
       ))}
