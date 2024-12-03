@@ -70,7 +70,7 @@
   "error_loading_university": "Error loading university details.",
   "no_universities": "No university found.",
   "the_universities": "The Universities",
-  "our_country_universities": "Our {country} universities.",
+  "our_country_universities": "Our {{country}} universities.",
   "no_name_available": "No name available",
   "need_consultation": "Need Consultation ?",
   "dont_hear_send_message": "Don’t hesitate to send us message.",
@@ -78,7 +78,7 @@
 
   "error_loading_university": "Error loading university details.",
   "no_universities": "No university found.",
-  "location": "Location: {location}",
+  "location": "Location: {{location}}",
   "contact_us": "Contact Us",
 
   "our_team": "Our Team",
