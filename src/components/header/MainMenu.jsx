@@ -2,9 +2,11 @@
 
 import Link from "next/link";
 
+import { useEffect, useState, useTransition } from "react";
 import Image from "next/image";
-import { usePathname } from "next/navigation";
-import { useTranslation } from "react-i18next";
+import { usePathname, useRouter, redirect } from '@/src/i18n/routing';
+import { useParams} from 'next/navigation';
+import { useLocale } from "next-intl";
 
 const icons = [
   {
@@ -37,13 +39,24 @@ const IconItem = ({ icon, href }) => {
 };
 
 const MainMenu = () => {
-  const { i18n } = useTranslation();
-
+  // const { i18n } = useTranslation();
   const pathname = usePathname();
+  const router = useRouter();
+  const params = useParams();
+  const locale = useLocale();
+  const [isPending, startTransition] = useTransition();
 
   const isActive = (link) => {
     return pathname.replace(/\/\d+$/, "") === link.replace(/\/\d+$/, "");
   };
+
+  const handleSwitchLocale = () => {
+    startTransition(() => {
+      const newLocale = locale == 'ar' ? 'en' : 'ar';
+      router.replace({pathname, params}, {locale: newLocale});
+      location.href = '/' + newLocale + pathname;
+    });
+  }
 
   return (
     <nav className="navbar navbar-expand-lg order-lg-2">
@@ -60,7 +73,7 @@ const MainMenu = () => {
       </button>
       {/* End mobile collapse menu */}
 
-      <div className="collapse navbar-collapse" id="navbarNav">
+      <div className="navbar-collapse collapse visible" id="navbarNav">
         <ul className="navbar-nav">
           <li className="d-block d-lg-none">
             <div className="logo">
@@ -176,12 +189,12 @@ const MainMenu = () => {
               Company Profile
             </Link>
             <Link
-              href="#"
-              onClick={() => i18n.changeLanguage(i18n.language == 'en' ? 'ar' : 'en')}
-              className="btn-twentyOne fw-500 tran3s"
-              style={{ marginTop: '10px' }}
-            >
-              { i18n.language.toUpperCase() }
+                href="#"
+                onClick={() => handleSwitchLocale() }
+                className="btn-twentyOne fw-500 tran3s mt-5"
+                style={{ marginInlineStart: '10px' }}
+              >
+                { ( locale || 'en').toUpperCase() }
             </Link>
             <ul className="d-flex social-icon style-none mt-5" style={{ marginRight: '20px' }}>
               {icons.map((icon, index) => (

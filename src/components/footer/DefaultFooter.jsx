@@ -1,4 +1,3 @@
-"use client"
 import Link from "next/link";
 import Footer2 from "./Footer2";
 import NewsLetter from "./NewsLetter";

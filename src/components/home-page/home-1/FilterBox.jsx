@@ -58,8 +58,8 @@ const FilterBox = () => {
 
   return (
     <form onSubmit={handleSubmit} className="search-area">
-      <div className="row gx-0 align-items-center">
-        <div className="col-lg-3">
+      <div className="grid grid-cols-1 md:grid-cols-12 gap-3 gx-0 align-items-center">
+        <div className="col-span-4 md:col-span-4">
           <div className="input-block">
             <Tooltip title="Select a country" placement="top">
               <Select
@@ -68,7 +68,7 @@ const FilterBox = () => {
                 placeholder="Select Country"
                 onChange={handleCountryChange}
                 optionFilterProp="children"
-                style={{ width: "100%", height: "6vh" }}
+                style={{ width: "100%", height: "6vh"  }}
                 filterOption={(input, option) =>
                   option.children.toLowerCase().includes(input.toLowerCase())
                 }
@@ -83,7 +83,7 @@ const FilterBox = () => {
           </div>
         </div>
 
-        <div className="col-lg-3">
+        <div className="col-span-4 md:col-span-3">
           <div className="input-block">
             <Tooltip title="Select a university" placement="top">
               <Select
@@ -92,7 +92,7 @@ const FilterBox = () => {
                 placeholder="Select University"
                 onChange={handleUniversityChange}
                 optionFilterProp="children"
-                style={{ width: "100%", height: "6vh", marginLeft: "4px" }}
+                style={{ width: "100%", height: "6vh" }}
                 disabled={disabledDropdowns.market}
                 filterOption={(input, option) =>
                   option.children.toLowerCase().includes(input.toLowerCase())
@@ -108,12 +108,12 @@ const FilterBox = () => {
           </div>
         </div>
 
-        <div className="col-lg-4">
+        <div className="col-span-4 md:col-span-5">
           <div className="input-block">
             <Button
               type="primary"
               htmlType="submit"
-              style={{ width: "100%", height: "6vh", marginLeft: "20px" }}
+              style={{ width: "100%", height: "6vh" }}
             >
               Search Now
             </Button>

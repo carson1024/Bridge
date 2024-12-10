@@ -41,7 +41,7 @@ const WhyChoose = () => {
           </div>
           <div
             id={`collapse${item.id}`}
-            className={`accordion-collapse collapse${
+            className={`accordion-collapse collapse visible ${
               item.id === 2 ? " show" : ""
             }`}
             aria-labelledby={`heading${item.id}`}

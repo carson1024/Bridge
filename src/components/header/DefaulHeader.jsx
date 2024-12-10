@@ -1,11 +1,14 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useTransition } from "react";
 import MainMenu from "./MainMenu";
 import Link from "next/link";
 import Image from "next/image";
-import { useTranslation } from 'react-i18next';
+import { usePathname, useRouter, redirect } from '@/src/i18n/routing';
+import { useParams} from 'next/navigation';
+
 import { useSiteInfo } from "@/src/hooks";
+import { useLocale } from "next-intl";
 
 const icons = [
   {
@@ -38,9 +41,15 @@ const IconItem = ({ icon, href }) => {
 };
 
 const DefaulHeader = () => {
-  const { i18n } = useTranslation();
+  // const { i18n } = useTranslation();
+  const pathname = usePathname();
+  const router = useRouter();
+  const params = useParams();
+  const locale = useLocale();
+  const [isPending, startTransition] = useTransition();
+
   const [navbar, setNavbar] = useState(false);
-  const { site_info } = useSiteInfo();
+  const { site_info, isLoading } = useSiteInfo();
 
   const changeBackground = () => {
     if (window.scrollY >= 10) {
@@ -49,6 +58,14 @@ const DefaulHeader = () => {
       setNavbar(false);
     }
   };
+
+  const handleSwitchLocale = () => {
+    startTransition(() => {
+      const newLocale = locale == 'ar' ? 'en' : 'ar';
+      router.replace({pathname, params}, {locale: newLocale});
+      location.href = '/' + newLocale + pathname;
+    });
+  }
 
   useEffect(() => {
     window.addEventListener("scroll", changeBackground);
@@ -70,14 +87,16 @@ const DefaulHeader = () => {
               <Image
                 src={ site_info && site_info.logo_image ? `${process.env.NEXT_PUBLIC_BACKEND_UPLOAD_URL}${site_info.logo_image}` : "/images/logo/bridge-logo.png" }
                 alt={ site_info && site_info.alt || "logo" }
-                width={150}
+                width={120}
                 height={120}
+                hidden={isLoading}
+                className="max-h-full"
               />
             </Link>
           </div>
-          <div className="right-widget ml-auto order-lg-3">
+          <div className="right-widget order-lg-3">
             <div className="d-flex align-items-center">
-              <div className="d-none d-xl-block">
+              <div className="d-none d-xxl-block">
                 <ul className="d-flex social-icon style-none" style={{ marginRight: '20px' }}>
                   {icons.map((icon, index) => (
                     <IconItem key={index} icon={icon.icon} href={icon.href} />
@@ -92,11 +111,11 @@ const DefaulHeader = () => {
               </Link>
               <Link
                 href="#"
-                onClick={() => i18n.changeLanguage(i18n.language == 'en' ? 'ar' : 'en')}
+                onClick={() => handleSwitchLocale() }
                 className="btn-twentyOne fw-500 tran3s d-none d-lg-block"
                 style={{ marginInlineStart: '10px' }}
               >
-                { i18n.language.toUpperCase() }
+                { ( locale || 'en').toUpperCase() }
               </Link>
             </div>
           </div>

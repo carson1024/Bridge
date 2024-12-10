@@ -70,7 +70,7 @@ const FaqAccordion = () => {
           </div>
           <div
             id={`collapse-${index}`}
-            className={`accordion-collapse collapse ${
+            className={`accordion-collapse collapse visible ${
               index === 2 ? "show" : ""
             }`}
             aria-labelledby={`heading-${index}`}

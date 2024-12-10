@@ -35,7 +35,7 @@ const Hero1 = () => {
         backgroundSize: "cover", // Ensure the background covers the entire area
         backgroundPosition: "center", // Center the background image
         backgroundRepeat: "no-repeat", // Avoid repeating the image
-        height: "100vh", // Set the height to cover the viewport
+        minHeight: "100vh", // Set the height to cover the viewport
         paddingTop: "125px"
       }}
     >

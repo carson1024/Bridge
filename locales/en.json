@@ -1,0 +1,114 @@
+{
+  "AboutUsV1": {
+    "amazing_communication": "Amazing communication.",
+    "best_trending_design": "Best trending designing experience.",
+    "email_live_chat": "Email & Live chat.",
+    "our_team": "Our Team",
+    "view_full_team": "View full team",
+    "partners": "Partners",
+    "need_consultation": "Need Consultation ?",
+    "dont_hesitate_to_message": "Don’t hesitate to send us message.",
+    "our_staff": "Our nearly <count></count> committed staff members are ready to help.",
+    "get_started_today": "Get Started Today!"
+  },
+
+  "Faq": {
+    "faq": "FAQ",
+    "questions_and_answers": "Questions and Answers",
+    "shape": "Shape",
+    "didnt_get_answer": "Didn't get an answer?",
+    "contact_us": "Contact Us"
+  },
+
+  "Pricing": {
+    "error_heading": "Opps! you’r on the wrong place.",
+    "error_message": "Can not find what you need? Take a moment and do a search below or start from our Homepage.",
+    "back_to_home": "Back to home"
+  },
+
+  "ServiceDetails": {
+    "error_loading_service_details": "Error loading service details.",
+    "no_service_found": "No service found.",
+    "service_details": "Service Details",
+    "we_provide_quality_services": "We Provide Qulaity Services.",
+    "shape": "Shape",
+    "media": "Media",
+    "various_analysis_options": "Various analysis options.",
+    "page_load_analysis": "Page Load (time, number of requests).",
+    "big_data_analysis": "Big data analysis.",
+    "the_challenge": "The Challange",
+    "challenge_description": "",
+    "any_questions_find_here": "Any Questions find here.",
+    "icon": "Icon",
+    "bridge_international_message": "Bridge International takes studying abroad into another dimension",
+    "ceo": "CEO",
+    "share_it": "Share it.",
+    "need_consultation": "Need Consultation ?",
+    "dont_hesitate_message": "Don’t hesitate to send us message.",
+    "get_started_today": "Get Started Today!"
+  },
+
+  "Branches": {
+    "branches": "Branches",
+    "shape": "shape",
+    "icon_shape": "shape",
+    "our_branches": "Our Branches",
+    "how_it_works": "How It Works",
+    "discover_services": "Discover Our Services",
+    "view_all_services": "View All Services",
+    "why_choose_us": "Why Choose Us",
+    "what_makes_us_best": "What Makes Us Best"
+  },
+
+  "DynamicBlogDetails": {
+    "posted_in": "Posted in",
+    "recent_news": "Recent News"
+  },
+
+  "Insurance": {
+    "our_history_goal": "Our History & Goal",
+    "bridge_history_description":
+      "Bridge International started with a mission to provide reliable and trusted insurance solutions for individuals and businesses. Over the years, we have expanded our offerings to cater to diverse needs.",
+    "how_it_works": "How It Works",
+    "discover_services": "Discover Our Services",
+    "view_all_services": "View All Services",
+    "why_choose_us": "Why Choose Us",
+    "what_makes_us_best": "What Makes Us Best",
+    "client_feedback": "Client Feedback",
+    "bridge_news": "Bridge News",
+    "partners": "Our Partners",
+    "go_to_news": "Go to News",
+    "footer_description":
+      "Providing the best insurance solutions for over two decades. Trust, reliability, and expertise.",
+    "footer_rights": "All rights reserved."
+  },
+
+  "UniversitiesList": {
+    "error_loading_university": "Error loading university details.",
+    "no_universities": "No university found.",
+    "the_universities": "The Universities",
+    "our_country_universities": "Our {country} universities.",
+    "no_name_available": "No name available",
+    "need_consultation": "Need Consultation ?",
+    "dont_hear_send_message": "Don’t hesitate to send us message.",
+    "get_started_today": "Get Started Today!"
+  },
+
+  "UniversityDetail": {
+    "error_loading_university": "Error loading university details.",
+    "no_universities": "No university found.",
+    "location": "Location: {location}",
+    "contact_us": "Contact Us"
+  },
+
+  "Team": {
+    "our_team": "Our Team",
+    "qualified_team": "Qualified Team"
+  },
+
+  "ContactV1": {
+    "contact_info": "Contact info",
+    "get_in_touch": "Get in Touch.",
+    "any_question_send_us_message": "Any question? Send us message."
+  }
+}

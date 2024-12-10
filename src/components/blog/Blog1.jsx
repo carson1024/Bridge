@@ -1,9 +1,7 @@
-'use client'
 import Link from "next/link";
 import Image from "next/image";
 
 const Blog1 = ({ blogs }) => {
-  console.log('the blogs:', blogs)
   return (
     <>
       {blogs.map((blog) => (

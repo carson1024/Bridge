@@ -38,7 +38,7 @@ const Faq = () => {
           </div>
           <div
             id={`collapse${item.id}`}
-            className={`accordion-collapse collapse${
+            className={`accordion-collapse collapse visible ${
               item.id === 1 ? " show" : ""
             }`}
             aria-labelledby={`heading${item.id}`}

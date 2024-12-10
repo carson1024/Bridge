@@ -1,5 +1,3 @@
-"use client";
-
 const Pagination = ({ total, perPage, currentPage, onPageChange }) => {
   const totalPages = Math.ceil(total / perPage);
 

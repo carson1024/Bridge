@@ -41,7 +41,7 @@ const Faq = () => {
           </div>
           <div
             id={`collapse${index}`}
-            className="accordion-collapse collapse"
+            className="accordion-collapse collapse visible"
             aria-labelledby={`heading${index}`}
             data-bs-parent="#accordionOne"
           >
