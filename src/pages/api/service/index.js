@@ -8,7 +8,7 @@ export default async function handler(req, res) {
       const { id, locale } = req.query;
 
       const suffix_locale = (!locale || locale == 'en') ? '' : '_' + locale;
-      const select = `service_name${suffix_locale} as service_name, description${suffix_locale} as description, image, alt`;
+      const select = `id, service_name${suffix_locale} as service_name, description${suffix_locale} as description, image, alt`;
 
       if (id) {
         const [rows] = await connection.execute(

@@ -1,8 +1,10 @@
 import useSWR from "swr";
 import { fetcher } from "../lib/fetcher";
 import { useTranslation } from "react-i18next";
+import { useLocale } from "next-intl";
 
-export function useTestimonials(locale = 'en') {
+export function useTestimonials() {
+  const locale = useLocale();
   const { data, error, mutate } = useSWR(`/api/testimonials?locale=${locale}`, fetcher);
 
   return {
@@ -13,7 +15,8 @@ export function useTestimonials(locale = 'en') {
   };
 }
 
-export function useBlogs({ searchQuery = "", page = 1 }, locale = 'en') {
+export function useBlogs({ searchQuery = "", page = 1 }) {
+  const locale = useLocale();
   const queryString = new URLSearchParams({
     locale: locale,
     search: searchQuery || "",
@@ -30,7 +33,8 @@ export function useBlogs({ searchQuery = "", page = 1 }, locale = 'en') {
   };
 }
 
-export function useBranches(locale = 'en') {
+export function useBranches() {
+  const locale = useLocale();
   const { data, error, mutate } = useSWR(`/api/branches?locale=${locale}`, fetcher);
 
   return {
@@ -41,7 +45,8 @@ export function useBranches(locale = 'en') {
   };
 }
 
-export function useServices(locale = 'en') {
+export function useServices() {
+  const locale = useLocale();
   const { data, error, mutate } = useSWR(`/api/service?locale=${locale}`, fetcher);
 
   return {
@@ -52,7 +57,8 @@ export function useServices(locale = 'en') {
   };
 }
 
-export function useServiceById(id, locale = 'en') {
+export function useServiceById(id) {
+  const locale = useLocale();
   const { data, error } = useSWR(id ? `/api/service/${id}?locale=${locale}` : null, fetcher);
 
   return {
@@ -61,7 +67,8 @@ export function useServiceById(id, locale = 'en') {
     isError: error,
   };
 }
-export function useTeam(locale = 'en') {
+export function useTeam() {
+  const locale = useLocale();
   const { data, error } = useSWR(`/api/team?locale=${locale}`, fetcher);
 
   return {
@@ -71,7 +78,8 @@ export function useTeam(locale = 'en') {
   };
 }
 
-export function useAboutUs(locale = 'en') {
+export function useAboutUs() {
+  const locale = useLocale();
   const { data, error } = useSWR(`/api/aboutus?locale=${locale}`, fetcher);
 
   return {
@@ -91,7 +99,8 @@ export function useSiteInfo() {
   };
 }
 
-export function useContactInfo(locale = 'en') {
+export function useContactInfo() {
+  const locale = useLocale();
   const { data, error } = useSWR(`/api/contactinfo?locale=${locale}`, fetcher);
 
   return {
@@ -121,7 +130,8 @@ export function useSlider() {
   };
 }
 
-export function useCountries(locale = 'en') {
+export function useCountries() {
+  const locale = useLocale();
   const { data, error } = useSWR(`/api/countries?locale=${locale}`, fetcher);
 
   return {
@@ -131,7 +141,8 @@ export function useCountries(locale = 'en') {
   };
 }
 
-export function useUniversities(location, locale = 'en') {
+export function useUniversities(location) {
+  const locale = useLocale();
   const { data, error } = useSWR(location ? `/api/universities??locale=${locale}&location=${location}` : null, fetcher);
 
   return {
@@ -141,7 +152,8 @@ export function useUniversities(location, locale = 'en') {
   };
 }
 
-export function useUniversityDetail(universityName, locale = 'en') {
+export function useUniversityDetail(universityName) {
+  const locale = useLocale();
   const { data, error } = useSWR(universityName ? `/api/universities/${universityName}?locale=${locale}` : null, fetcher);
 
   return {

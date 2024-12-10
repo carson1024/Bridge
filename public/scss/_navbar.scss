@@ -264,6 +264,9 @@
 }
 /*----- For Desktop -------*/
 @media screen and (min-width: 992px) {
+  [dir=rtl] .theme-main-menu .navbar {
+    left: 60%;
+  }
   .theme-main-menu .navbar {
     position: absolute;
     left: 40%;
@@ -326,6 +329,12 @@
     line-height: 50px;
     font-size: 15px;
   }
+  [dir=rtl] .navbar-collapse {
+    right: 0;
+    left: initial;
+    transform: translateX(100%);
+  }
+
   .navbar-collapse {
     position: fixed;
     top: 0;
